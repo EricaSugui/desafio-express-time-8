@@ -1,0 +1,19 @@
+{
+    "usuarios": [{
+        "nome": "Alex",
+        "email": "alex.silva.11@hotmail.com",
+        "senhaCriptografada": "$2b$10$4biFWtIbftq0D.vBpMoUyuZr9w5cDBSg/MVlPTGNHCTVPhp0P5TCa"
+    }, {
+        "nome": "Erica",
+        "email": "erica@erica.com",
+        "senhaCriptografada": "$2b$10$RRJWoSB0t.UPrkR2G1hub.Gf7cqGPWlje/9zECxbFv6ue44DTObw."
+    }, {
+        "nome": "Aguiaia",
+        "email": "aguiaia@aguiaia.com",
+        "senhaCriptografada": "$2b$10$cHhrRLyUCzTzf79BC0tAm.YAPGV5/GqmPEL605Yyx.U9P0iMVWoiK"
+    }, {
+        "nome": "Veronesi",
+        "email": "veronesi@veronesi.com",
+        "senhaCriptografada": "$2b$10$EEWTc/3vfsJjImT7N6aNS.SviV8nTPxIPK0RmybpDEppTsABP.LY6"
+    }]
+}

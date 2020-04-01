@@ -13,4 +13,8 @@ router.get('/newsletter', homeController.newsletter);
 
 router.get('/admin', adminController.admin);
 
+router.get('/cadastro', adminController.cadastro);
+
+router.post('/confirmaCadastro', adminController.confirmaCadastro)
+
 module.exports = router;
