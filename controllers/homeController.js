@@ -53,6 +53,10 @@ const homeController = {
   },
   newsletter: (req, res) => {
     let {email} = req.query;
+    let dia = new Date().getDate();
+    let mes = new Date().getMonth() + 1;
+    let ano = new Date().getFullYear();
+    let data = `${dia}/${mes}/${ano}`;
     let fileNewsletter = path.join('db', `newsletter.json`);
     let listaNewsletter = {};
     if (fs.existsSync(fileNewsletter)){
@@ -61,12 +65,14 @@ const homeController = {
       // transformando JSON em obj
       listaNewsletter = JSON.parse(listaNewsletter);
       // pegando array de inscritos e adicionando um novo email
-      listaNewsletter.inscritos.push(email);
+      listaNewsletter.inscritos.push({email, data});
+
+      
       // guardando lista de inscritos com o novo email
       fs.writeFileSync(fileNewsletter, listaNewsletter);
     } else {
       listaNewsletter = {
-        inscritos: [email]
+        inscritos: [{email, data}]
       };
       
     }

@@ -1,0 +1,36 @@
+<%- include('./partials/header') %>
+
+<section id="admin" class="container">
+
+    <h2>PAINEL DE CONTROLE</h2>
+
+    <hr>
+
+    <h3>NEWSLETTER</h3>
+
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">email</th>
+            <th scope="col">data</th>
+            <th scope="col">ações</th>
+          </tr>
+        </thead>
+        
+
+        <tbody>
+            <% for (let i = 0; i < newsletter.length; i++) { %>
+          <tr>
+            <th scope="row">1</th>
+            <td> <%= newsletter[i].email %> </td>
+            <td>  <%= newsletter[i].data %> </td>
+            <td><button class="btn btn-warning">editar</button><button class="btn btn-danger" >excluir</button></td>
+          </tr>
+           <% }%>
+        </tbody>
+      </table> 
+
+
+</section>
+<%- include('./partials/footer') %>
