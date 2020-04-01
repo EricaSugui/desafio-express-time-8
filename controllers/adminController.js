@@ -68,8 +68,22 @@ const adminController = {
             nome,
             title: 'confirmaCadastro'
         })
+    },
+    login: (req, res) => {
+        
+        res.render('login', {title: "Login"})
+    },
+    confirmaLogin: (req, res) => {
+        let {email, senha} = req.body
+        let fileCadastro = path.join('db', 'usuarios.json');
+        let listaUsuarios = fs.readFileSync(fileCadastro);
+        listaUsuarios = JSON.parse(listaUsuarios);
+        for (let email of listaUsuarios){
+            
+        }
+        if (email)
+        res.redirect('admin')
     }
-
 
 }
 

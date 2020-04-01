@@ -15,6 +15,10 @@ router.get('/admin', adminController.admin);
 
 router.get('/cadastro', adminController.cadastro);
 
-router.post('/confirmaCadastro', adminController.confirmaCadastro)
+router.post('/confirmaCadastro', adminController.confirmaCadastro);
+
+router.get('/login', adminController.login);
+
+router.post('/confirmaLogin', adminController.confirmaLogin);
 
 module.exports = router;
