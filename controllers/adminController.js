@@ -13,10 +13,16 @@ const adminController = {
         console.log(newsletter);
         newsletter = JSON.parse(newsletter);
 
-        res.render('admin', {
-            newsletter: newsletter.inscritos,
-            title: 'Painel Admin'
-        });
+        if(req.session.login){
+            res.render('admin', {
+                newsletter: newsletter.inscritos,
+                title: 'Painel Admin'
+            });
+        } else {
+            res.redirect('/login')
+        }
+
+        
     },
 
     cadastro: (req, res) => {
@@ -86,7 +92,7 @@ const adminController = {
             if (email == listaUsuarios[i].email) {
                 let senhaComparada = bcrypt.compareSync(senha, listaUsuarios[i].senhaCriptografada)
                 if (senhaComparada) {
-                    req.session.login = listaUsuarios[i].nome
+                    req.session.login = true
                     res.redirect('/admin')
                 } else {
                     res.render('login', {title: 'Login', mensagem: "O email ou senha inválida!"})
